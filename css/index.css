@@ -1,0 +1,218 @@
+/* Default styles */
+
+/* CSS Grid */
+div#grid-container {
+  display: grid;
+  grid-template-columns: repeat(12, 1fr);
+  background-color: light-dark(white, #282828FF);
+}
+
+.hide {
+  display: none;
+}
+
+/* Nav styles */
+
+nav {
+  grid-column: 1 / -1;
+  display: flex;
+  background-color: light-dark(#282828FF, white);
+  position: sticky;
+  top: 0;
+}
+
+.icon {
+  display: none;
+}
+
+nav ul {
+  width: 100%;
+  display: flex;
+  justify-content: space-around;
+  align-self: flex-end;
+}
+
+nav ul li {
+  margin: 0;
+  flex-grow: 1;
+  text-align: center;
+}
+
+nav ul li:hover,
+.active {
+  background-color: light-dark(white, #282828FF);
+}
+
+nav ul li a {
+  display: inline-block;
+  width: 100%;
+  padding: 1rem 0;
+  font-size: min(3.6vw, 18px);
+  font-family: Arial, Helvetica, sans-serif;
+  color: light-dark(white, black);
+}
+
+nav ul li:hover a,
+.active a {
+  color: light-dark(black, white);
+}
+
+/* Header styles */
+
+header {
+  grid-column: 1 / -1;
+  margin: 0 1%;
+}
+
+header h1 {
+  display: flex;
+  flex-flow: column wrap;
+}
+
+header h1 span {
+  font-size: 20vw;
+}
+
+/* Main styles */
+
+main {
+  grid-column: 1 / -1;
+  display: grid;
+  grid-template-columns: repeat(12, 1fr);
+}
+
+main section {
+  grid-column: 1 / -1;
+  min-height: 100vh;
+  
+}
+
+main section:nth-child(2n-1) {
+  background-color: light-dark(lightgray, rgb(80, 80, 80));
+}
+
+main section h2 {
+  text-align: center;
+  font-family: Lora;
+  font-size: min(10vw, 4rem);
+}
+
+/* #about styles */
+
+/* #resume styles */
+
+main section#resume object {
+  width: min(100%, 100vw);
+  min-height: 100%;
+  margin: auto;
+  border: 2px solid #3C3C3CFF;
+}
+
+/* #contact styles */
+
+/* #coursework styles */
+
+/* #portfolio styles */
+
+/* Footer styles */
+
+footer {
+  grid-column: 1 / -1;
+  background-color: black;
+  text-align: center;
+}
+
+footer p {
+  color: white;
+}
+
+/* Media query for smallest viewport */
+
+@media screen and (width>=20rem
+  /*320px*/
+) {}
+
+/* Media query for extra-small viewports */
+
+@media screen and (width>=27rem
+  /*432px*/
+) {
+  footer p.hide {
+    display: block;
+  }
+}
+
+/* Media query for small viewports */
+
+@media screen and (width>=40rem
+  /*640px*/
+) {}
+
+/* Media query for medium viewports */
+
+@media screen and (width>=48rem
+  /*768px*/
+) {
+  @media (prefers-color-scheme: light) {
+    .darkmode {
+      display: none;
+    }
+
+    .lightmode {
+      display: block;
+    }
+  }
+
+  @media (prefers-color-scheme: dark) {
+    .lightmode {
+      display: none;
+    }
+
+    .darkmode {
+      display: block;
+    }
+  }
+}
+
+/* Media query for large viewports */
+
+@media screen and (width>=64rem
+  /*1024px*/
+) {}
+
+/* Media query for extra-large viewports */
+
+@media screen and (width>=80rem
+  /*1280px*/
+) {}
+
+/* Media query for extra-extra-large viewports */
+
+@media screen and (width>=96rem
+  /*1536px*/
+) {
+  /* Main styles */
+
+  main {
+    /* grid-column: 2 / -2; */
+    display: grid;
+    grid-template-columns: repeat(12, 1fr);
+  }
+
+  main section {
+    grid-column: 1 / -1;
+    min-height: 100vh;
+  }
+
+  /* #resume styles */
+
+  main section#resume {
+    height: 100vh;
+  }
+
+  main section#resume object {
+    width: 100%;
+    height: 100%;
+    margin: auto;
+  }
+}
